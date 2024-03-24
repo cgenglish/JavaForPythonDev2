@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Arrays;
 //USING THIS CODE AS CLASS NOTES
 
@@ -5,56 +6,84 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        //static int classLocal;
+        // //static int classLocal;
 
-        Circle circle = new Circle();
-        circle.radius = 5;
-        System.out.println("Circle 1's radius: " + circle.radius);
+        // Circle circle = new Circle();
+        // circle.radius = 5;
+        // System.out.println("Circle 1's radius: " + circle.radius);
         
-        Circle circle2 = new Circle();
-        //using this one to show that it prints at the specific memory destination versus the value
-        System.out.println("Circle 2's radius: " + circle2);
+        // Circle circle2 = new Circle();
+        // //using this one to show that it prints at the specific memory destination versus the value
+        // System.out.println("Circle 2's radius: " + circle2);
 
-        circle.radius = 10;
+        // circle.radius = 10;
 
-        int radius = 5;
-        System.out.println("radius1 " + radius);
+        // int radius = 5;
+        // System.out.println("radius1 " + radius);
 
-        int radius2 = radius;
-        System.out.println("radius2 " + radius2);
+        // int radius2 = radius;
+        // System.out.println("radius2 " + radius2);
 
-        radius = 65;
-        System.out.println("radius2 " + radius2);
+        // radius = 65;
+        // System.out.println("radius2 " + radius2);
 
-        String name = "Connor";
-        String name1 = "Connor";
+        // String name = "Connor";
+        // String name1 = "Connor";
 
-        System.out.println(name == name1);
-        //OR
-        System.out.println(name.equals(name1));
-        //OR --> this one gives value of 0 if true
-        System.out.println(name.compareTo(name1));
+        // System.out.println(name == name1);
+        // //OR
+        // System.out.println(name.equals(name1));
+        // //OR --> this one gives value of 0 if true
+        // System.out.println(name.compareTo(name1));
 
-        System.out.println(name.charAt(3));
-        System.out.println(name.toUpperCase());
+        // System.out.println(name.charAt(3));
+        // System.out.println(name.toUpperCase());
         
+        // Student student = new Student();
+        // System.out.println(student);
+        // System.out.println(student.name);
+        
+        // student.name = "Melissa";
+        // System.out.println(student.name);
+        
+        // student.GPA = 4.0;
+        // System.out.println("GPA " + student.GPA);
+
+        // Student Connor = new Student();
+        // Connor.name = "Connor";
+        // Connor.GPA = 3.7;
+        // //System.out.println(local); THIS doesn't work because of scoping
+
+        // System.out.println(returnVowelCount(name1));
+        // System.out.println(getVowels(name1));
+
         Student student = new Student();
+        student.major = Major.COMPUTERSCIENCE;
         System.out.println(student);
-        System.out.println(student.name);
+        student.dateOfBirth = LocalDate.of(1990, 01, 10);
+        System.out.println(student.getAge());
+        Student student2 = new Student();
+        student2.major = Major.PSYCHOLOGY;
         
-        student.name = "Melissa";
-        System.out.println(student.name);
+        if (student.major == Major.COMPUTERSCIENCE) {
+            System.out.println("Computers are the best" + student.major);
+
+        Car car1 = new Car();
+        car1.setHorsePower(450);
+        car1.setCarStyle(CarStyle.SUV);
+        car1.setPowerType(PowerType.UNLEADED);
         
-        student.GPA = 4.0;
-        System.out.println("GPA " + student.GPA);
+        Car car2 = new Car();
+        car2.setHorsePower(195);
 
-        Student Connor = new Student();
-        Connor.name = "Connor";
-        Connor.GPA = 3.7;
-        //System.out.println(local); THIS doesn't work because of scoping
+        System.out.println(car1.getHorsePower());
+        teacher.email = "mhegney@stmartin.edu";
+        System.out.println(car2.getHorsePower());
 
-        System.out.println(returnVowelCount(name1));
-        System.out.println(getVowels(name1));
+        Instructor teacher = new Instructor();
+        Instructor teacher2 = new Instructor();
+        
+        }
     }
 
     public static double harmonic(int n) {
