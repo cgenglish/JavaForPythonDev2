@@ -2,12 +2,30 @@ enum PowerType { ELECTRIC, UNLEADED, DIESEL, HYDROGEN};
 
 enum CarStyle { SEDAN, COUPE, TRUCK, SUV };
 
-enum CarMake {}
+enum CarMake { AUDI, VOLKSWAGON, FORD, HONDA, MAZDA, MERCEDES }
+
+enum CarModel { LOWEND, MIDDLEOFTHEROAD, THEBEST }
+
 
 public class Car {
    private int horsePower = 180;
     private PowerType powerType;
     private CarStyle carStyle;
+    private CarMake carMake;
+    private CarModel carModel;
+    private double currentMileage;
+    static int numberOfCars;
+    final int year;
+    String carName;
+
+    //this demonstrates a static method example, when static is present we can't access milage with this
+    // public static double ConvertMilageToKilometers() {
+    //     return this.mileage * 1.609;
+    // }
+
+    public static double ConvertMilageToKilometers(double mileage) {
+        return mileage * 1.609;
+    }
 
     //this is a public getter/accessor and setter/mutator for horsePower
     public int getHorsePower() {
@@ -37,4 +55,39 @@ public class Car {
     public void setCarStyle(CarStyle newValue) {
         carStyle = newValue;
     } 
+
+    public double getMileage() {
+        return currentMileage;
+    }
+
+    public void setMileage(double newValue) {
+        currentMileage = newValue;
+    }
+
+    public Car(int year) {
+        numberOfCars++;
+        this.year = year;
+    };
+
+    public Car(CarMake carMake, CarModel carModel, int year) {
+        this.carMake = carMake;
+        this.carModel = carModel;
+        numberOfCars++;
+        this.year = year;
+    }
+
+    public String toString() {
+        return "Make: " + carMake + " Model: " + carModel;
+    }
+
+    public void Drive(double addMileage) {
+        currentMileage = addMileage + currentMileage;
+    }
+
+
+    public String Honk() {
+        System.out.println("HONK");
+        return "HONK";
+    }
 }
+

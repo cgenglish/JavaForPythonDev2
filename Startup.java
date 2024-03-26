@@ -57,31 +57,53 @@ public class Startup {
         // System.out.println(returnVowelCount(name1));
         // System.out.println(getVowels(name1));
 
-        Student student = new Student();
+        Student student = new Student("Connor", LocalDate.of(1990, 01, 10));
         student.major = Major.COMPUTERSCIENCE;
         System.out.println(student);
-        student.dateOfBirth = LocalDate.of(1990, 01, 10);
         System.out.println(student.getAge());
-        Student student2 = new Student();
-        student2.major = Major.PSYCHOLOGY;
         
-        if (student.major == Major.COMPUTERSCIENCE) {
-            System.out.println("Computers are the best" + student.major);
+        Student student2 = new Student("Peter");
+        student2.major = Major.PSYCHOLOGY;
+        student.dateOfBirth = LocalDate.of(1990, 01, 10);
+        System.out.println(student2.toString("Hegney"));
+        // System.out.println(student2.getAge());
+        
+        Student student3 = new Student();
+        student3.major = Major.BUSINESS;
+        System.out.println(student3);
 
-        Car car1 = new Car();
+        if (student.major == Major.COMPUTERSCIENCE) {
+            System.out.println("Computers are the best " + student.major);
+
+        System.out.println();
+
+        Car car1 = new Car(1996);
         car1.setHorsePower(450);
         car1.setCarStyle(CarStyle.SUV);
         car1.setPowerType(PowerType.UNLEADED);
+        // car1.year = 1996; this doesn't work due to the type for the variable year being final
         
-        Car car2 = new Car();
+        Car car2 = new Car(2006);
         car2.setHorsePower(195);
+        System.out.println(car2.Honk());
+        car2.Drive(5000.00);
+        System.out.println(car2.getMileage());
+        
 
-        System.out.println(car1.getHorsePower());
-        teacher.email = "mhegney@stmartin.edu";
-        System.out.println(car2.getHorsePower());
+        Car car3 = new Car(CarMake.AUDI, CarModel.THEBEST, 2020);
+        System.out.println(car3.toString());
+        
+        System.out.println("Number of cars deployed: " + Car.numberOfCars);
 
-        Instructor teacher = new Instructor();
-        Instructor teacher2 = new Instructor();
+        Car car4 = new Car(CarMake.VOLKSWAGON, CarModel.MIDDLEOFTHEROAD, 2023);
+        System.out.println(car4.carName); //should print null because not initialized 
+
+        // System.out.println(car1.getHorsePower());
+        // teacher.email = "mhegney@stmartin.edu";
+        // System.out.println(car2.getHorsePower());
+
+        // Instructor teacher = new Instructor();
+        // Instructor teacher2 = new Instructor();
         
         }
     }
